@@ -1,1 +1,1 @@
-# JPA-programming
+# JPA-programming Test project
