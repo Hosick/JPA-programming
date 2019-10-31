@@ -1,1 +1,1 @@
-# JPA-programming Test project
+Spring data JPA study project
