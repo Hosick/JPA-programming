@@ -52,9 +52,7 @@ public class PostRepositoryTest {
 
     @Test
     public void findByTitleStartsWith() {
-        Post post = new Post();
-        post.setTitle("spring data jpa");
-        postRepository.save(post);
+        savePost();
 
         List<Post> all = postRepository.findByTitleStartsWith("spring");
         assertThat(all.size()).isEqualTo(1);
@@ -63,13 +61,16 @@ public class PostRepositoryTest {
 
     @Test
     public void findByTitle() {
-        Post post = new Post();
-        post.setTitle("spring");
-        postRepository.save(post);
-
+        savePost();
         List<Post> all = postRepository.findByTitle("spring", Sort.by("title"));
         assertThat(all.size()).isEqualTo(1);
 
+    }
+
+    public Post savePost(){
+        Post post = new Post();
+        post.setTitle("spring");
+        return postRepository.save(post);   //  persist
     }
 
     @Test
@@ -91,6 +92,24 @@ public class PostRepositoryTest {
 
         postRepository.delete(post);
         postRepository.flush();*/
+    }
+
+    @Test
+    public void updateTitle() {
+        Post spring = savePost();
+        spring.setTitle("hibernate");
+
+        List<Post> all = postRepository.findAll();
+        assertThat(all.get(0).getTitle()).isEqualTo("hibernate");
+
+
+/*        String hibernate = "hibernate";
+        int update = postRepository.updateTitle(hibernate, spring.getId());
+        assertThat(update).isEqualTo(1);
+
+        Optional<Post> byId = postRepository.findById(spring.getId());
+        Post post = byId.get();
+        assertThat(post.getTitle()).isEqualTo(hibernate);*///update 쿼리 방법(비추천)
     }
 
 
