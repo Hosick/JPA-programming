@@ -1,15 +1,27 @@
 package me.hosick.demojpa.post;
 
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
+import java.util.Date;
 
 @NamedEntityGraph(name = "Comment.post", attributeNodes = @NamedAttributeNode("post"))
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Comment {
 
     @Id @GeneratedValue
     private Long id;
 
     private String comment;
+
+    @Enumerated(value = EnumType.STRING)
+    private CommentStatus commentStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Post post;
@@ -19,6 +31,20 @@ public class Comment {
     private int down;
 
     private boolean best;
+
+    @CreatedDate
+    private Date created;
+
+    @CreatedBy
+    @ManyToOne
+    private Account CreatedBy;
+
+    @LastModifiedDate
+    private Date updated;
+
+    @LastModifiedBy
+    @ManyToOne
+    private Account updatedBy;
 
     public Long getId() {
         return id;
@@ -66,5 +92,10 @@ public class Comment {
 
     public void setBest(boolean best) {
         this.best = best;
+    }
+
+    @PrePersist
+    public void prePersist(){
+        System.out.println("Pre Persist Called");
     }
 }

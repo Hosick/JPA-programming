@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface PostRepository extends MyRepository<Post, Long>, QuerydslPredicateExecutor<Post> {
+public interface PostRepository extends MyRepository<Post, Long>/*, QuerydslPredicateExecutor<Post> */{
 
     List<Post> findByTitleStartsWith(String title);
 
