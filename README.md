@@ -2,4 +2,4 @@
 
 ![Entity](https://user-images.githubusercontent.com/33890461/68526877-e6d9e600-0323-11ea-9460-af2ee18919f0.JPG)
 
-## 스프링 부트 + JPA
+## 스프링 부트 + JPA 실습
