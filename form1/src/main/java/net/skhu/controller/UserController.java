@@ -31,7 +31,7 @@ public class UserController {
 
     @PostMapping("register")
     public String register(@Valid UserRegistrationModel userModel, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
+        if (userService.hasErrors(userModel, bindingResult)) {
             model.addAttribute("departments", departmentService.findAll());
             return "user/register";
         }
