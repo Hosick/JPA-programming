@@ -1,6 +1,6 @@
 package net.skhu.service;
 
-import net.skhu.UserRepository;
+import net.skhu.repository.UserRepository;
 import net.skhu.domain.User;
 import net.skhu.utils.EncryptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
