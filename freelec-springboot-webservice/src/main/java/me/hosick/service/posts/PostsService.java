@@ -1,7 +1,6 @@
 package me.hosick.service.posts;
 
 import lombok.RequiredArgsConstructor;
-import me.hosick.domain.posts.Posts;
 import me.hosick.domain.posts.PostsRepository;
 import me.hosick.web.dto.PostsSaveRequestDto;
 import org.springframework.stereotype.Service;
