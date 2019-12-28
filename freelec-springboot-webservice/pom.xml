@@ -99,6 +99,10 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
+        <dependency> <!--머스테치 템플릿 엔진 의존성 추가-->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mustache</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
