@@ -1,7 +1,7 @@
-package config.auth;
+package me.hosick.config.auth;
 
-import config.auth.dto.OAuthAttributes;
-import config.auth.dto.SessionUser;
+import me.hosick.config.auth.dto.OAuthAttributes;
+import me.hosick.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import me.hosick.domain.user.User;
 import me.hosick.domain.user.UserRepository;

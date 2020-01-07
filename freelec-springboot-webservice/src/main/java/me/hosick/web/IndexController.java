@@ -1,6 +1,6 @@
 package me.hosick.web;
 
-import config.auth.dto.SessionUser;
+import me.hosick.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import me.hosick.service.posts.PostsService;
 import me.hosick.web.dto.PostsResponseDto;
@@ -22,6 +22,7 @@ public class IndexController {
     public String index(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        /*로그*/System.out.println("유저 로그 : "+user);
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }

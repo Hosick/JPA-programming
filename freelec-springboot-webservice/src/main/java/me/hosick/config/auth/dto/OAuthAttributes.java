@@ -1,4 +1,4 @@
-package config.auth.dto;
+package me.hosick.config.auth.dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -26,7 +26,6 @@ public class OAuthAttributes {
 
     public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
         return ofGoogle(userNameAttributeName, attributes);
-
     }
 
     private static OAuthAttributes ofGoogle(String userNameAttributeName, Map<String, Object> attributes) {

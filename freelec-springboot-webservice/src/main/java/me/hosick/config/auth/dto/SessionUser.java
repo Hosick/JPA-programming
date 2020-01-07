@@ -1,4 +1,4 @@
-package config.auth.dto;
+package me.hosick.config.auth.dto;
 
 import me.hosick.domain.user.User;
 
