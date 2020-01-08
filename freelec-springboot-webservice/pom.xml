@@ -95,34 +95,11 @@
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
             <!--<version>2.1.2.RELEASE</version>-->
         </dependency>
-        <!--security 임시-->
-        <!--<dependency> &lt;!&ndash;spring security 의존성 추가&ndash;&gt;
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-taglibs</artifactId>
-        </dependency>-->
-        <!--<dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>-->
-         <!--<dependency>
-             <groupId>org.springframework.boot</groupId>
-             <artifactId>spring-boot-starter-security</artifactId>
-         </dependency>
+        <!--세션 저장소를 jdbc 로 -->
         <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-jdbc</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-oauth2-client</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-oauth2-jose</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>-->
     </dependencies>
 
     <build>
