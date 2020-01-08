@@ -85,7 +85,8 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
-        <dependency> <!--머스테치 템플릿 엔진 의존성 추가-->
+        <!--머스테치 템플릿 엔진 의존성 추가-->
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mustache</artifactId>
         </dependency>
@@ -99,6 +100,13 @@
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-jdbc</artifactId>
+        </dependency>
+
+        <!-- test용 security 의존성 추가 -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
